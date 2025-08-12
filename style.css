@@ -1,0 +1,346 @@
+:root {
+    /* Colors */
+    /* Primary */
+    --green-400: hsl(172, 67%, 45%);
+    /* Neutral */
+    --green-900: hsl(183, 100%, 15%);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+
+    /* Typography */
+    /* Font */
+    --font-family: "Space Mono";
+    --font-weight-700: 700;
+
+    --border-radius: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: var(--grey-200);
+    padding: 30px;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 0;
+        margin-top: 20px;
+    }
+}
+
+body>img {
+    width: 80px;
+    word-break: break-all;
+    font-weight: var(--font-weight-700);
+    letter-spacing: 10px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.calculator {
+    display: flex;
+    background-color: white;
+    gap: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 60%;
+}
+
+@media (max-width:767px) {
+    .calculator {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+.calculator .inputs {
+    flex-basis: 50%;
+}
+
+.calculator .inputs .bill h3 {
+    font-size: small;
+    margin-bottom: 10px;
+    color: var(--grey-500);
+}
+
+.calculator .inputs .bill div {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.calculator .inputs .bill div img {
+    position: absolute;
+    left: 10px;
+}
+
+.calculator .inputs .bill div input {
+    text-align: end;
+    background-color: var(--grey-200);
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--green-900);
+    font-size: 20px;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-700);
+}
+
+.calculator .inputs .bill div input:focus {
+    border: 2px solid var(--green-400);
+}
+
+.calculator .inputs .bill div input::placeholder {
+    color: var(--grey-400);
+    opacity: 1;
+}
+
+.calculator .inputs .tip {
+    margin: 30px 0;
+}
+
+.calculator .inputs .tip h3 {
+    font-size: small;
+    color: var(--grey-500);
+}
+
+.calculator .inputs .tip .percentages {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    row-gap: 10px;
+    justify-content: space-between;
+}
+
+.calculator .inputs .tip .percentages button {
+    flex-basis: calc(100% / 3 - 10px);
+    background-color: var(--green-900);
+    color: white;
+    font-weight: var(--font-weight-700);
+    font-family: var(--font-family);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .calculator .inputs .tip .percentages button {
+        flex-basis: calc(100% / 2 - 10px);
+    }
+}
+
+.calculator .inputs .tip .percentages button:nth-child(2),
+.calculator .inputs .tip .percentages button:nth-child(5) {
+    margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+
+    .calculator .inputs .tip .percentages button:nth-child(2),
+    .calculator .inputs .tip .percentages button:nth-child(5) {
+        margin: 0;
+    }
+}
+
+.calculator .inputs .tip .percentages button:hover {
+    background-color: var(--green-400);
+}
+
+.calculator .inputs .tip .percentages button.selected {
+    color: var(--green-900);
+    background-color: var(--green-400);
+}
+
+.calculator .inputs .tip .percentages input {
+    width: calc(100% / 3 - 10px);
+    background-color: var(--grey-200);
+    text-align: center;
+    font-size: 15px;
+    font-weight: var(--font-weight-700);
+    font-family: var(--font-family);
+    color: var(--green-900);
+}
+
+@media (max-width: 767px) {
+    .calculator .inputs .tip .percentages input {
+        flex-basis: calc(100% / 2 - 10px);
+    }
+}
+
+.calculator .inputs .tip .percentages input:focus {
+    border: 2px solid var(--green-400);
+    text-align: end;
+    caret-color: var(--green-400);
+}
+
+.calculator .inputs .tip .percentages input::placeholder {
+    color: var(--green-900);
+}
+
+.calculator .inputs .tip .percentages button,
+.calculator .inputs .tip .percentages input {
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.calculator .inputs .people {
+    position: relative;
+}
+
+.calculator .inputs .people h3 {
+    font-size: small;
+    color: var(--grey-500);
+    margin-bottom: 10px;
+}
+
+
+.calculator .inputs .people div {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.calculator .inputs .people div img {
+    position: absolute;
+    left: 10px;
+}
+
+.calculator .inputs .people div input {
+    text-align: end;
+    background-color: var(--grey-200);
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--green-900);
+    font-size: 20px;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-700);
+}
+
+.calculator .inputs .people div div.error {
+    position: absolute;
+    font-size: 12px;
+    color: red;
+    right: 0;
+    top: -29px;
+    font-weight: var(--font-weight-700);
+    display: none;
+}
+
+.calculator .inputs .people div input.error {
+    border: 2px solid red;
+}
+
+.calculator .inputs .people div input::placeholder {
+    color: var(--grey-400);
+    opacity: 1;
+}
+
+.calculator .results {
+    background-color: var(--green-900);
+    border-radius: inherit;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+}
+
+.calculator .results .amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.calculator .results .amount span:first-child {
+    width: 110px;
+    font-size: 15px;
+    color: white;
+}
+
+.calculator .results .amount span:first-child span {
+    color: var(--grey-400);
+    font-weight: var(--font-weight-700);
+}
+
+.calculator .results .amount>span:last-child {
+    color: var(--green-400);
+    font-weight: var(--font-weight-700);
+    font-size: 30px;
+}
+
+.calculator .results .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.calculator .results .total span:first-child {
+    width: 60px;
+    font-size: 15px;
+    color: white;
+}
+
+.calculator .results .total span:first-child span {
+    color: var(--grey-400);
+    font-weight: var(--font-weight-700);
+}
+
+.calculator .results .total>span:last-child {
+    color: var(--green-400);
+    font-weight: var(--font-weight-700);
+    font-size: 30px;
+}
+
+.calculator .results button {
+    position: absolute;
+    bottom: 15px;
+    width: calc(100% - 50px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: not-allowed;
+    font-weight: var(--font-weight-700);
+    font-family: var(--font-family);
+    background-color: hsl(172, 67%, 45%);
+    opacity: .1;
+}
+
+.calculator .results button:hover {
+    cursor: pointer;
+    background-color: var(--grey-200);
+}
